@@ -14,8 +14,8 @@ export default function WhyUs() {
         <SectionHeading
           light
           eyebrow="Why Choose GSD"
-          title="A Transport Partner You Can Trust"
-          subtitle="We combine modern equipment with old-fashioned reliability to keep your supply chain moving."
+          title="A 3PL Partner You Can Trust"
+          subtitle="Next-gen logistics powered by smart tech and a team that never stops — keeping your supply chain always on the move."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

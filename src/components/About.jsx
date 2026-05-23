@@ -3,10 +3,10 @@ import Icon from './Icon'
 import Reveal from './Reveal'
 
 const highlights = [
-  'Pan-India full-truckload movement',
-  'Modern 32 ft & 34 ft single-axle fleet',
-  'GPS-tracked, fully insured transit',
-  'Round-the-clock shipment support',
+  'End-to-end 3PL management',
+  'Full & part-load road transport',
+  'Own fleet of 32 ft & 34 ft containers',
+  'GPS-tracked, 24/7-supported shipments',
 ]
 
 // Build initials for the founder avatar (e.g. "Vipin Pal" → "VP").
@@ -35,13 +35,13 @@ export default function About() {
               Who We Are
             </p>
             <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
-              Your Trusted 3PL & Container Transport Partner
+              Your Trusted 3PL Partner
             </h2>
             <p className="mt-5 text-lg text-slate-600">
-              {company.name} is a pan-India third-party logistics (3PL) and road transport company
-              specialising in 32 ft and 34 ft single-axle containers. Founded in {company.founded},
-              we help manufacturers, traders and businesses move their cargo safely and on time — to
-              every corner of the country.
+              {company.name} is a full-service pan-India third-party logistics (3PL) company.
+              Founded in {company.founded}, we manage end-to-end logistics for manufacturers, traders
+              and businesses — from full &amp; part loads to nationwide distribution — backed by our
+              own fleet of 32 ft and 34 ft containers.
             </p>
             <ul className="mt-7 grid gap-3 sm:grid-cols-2">
               {highlights.map((h) => (
@@ -66,7 +66,14 @@ export default function About() {
                   </div>
                   <h3 className="mt-5 text-lg font-bold text-navy">{f.name}</h3>
                   <p className="text-sm font-semibold text-saffron-dark">{f.role}</p>
-                  <p className="mt-3 text-sm text-slate-600">{f.bio}</p>
+                  <ul className="mt-4 space-y-2">
+                    {f.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2.5 text-sm text-slate-600">
+                        <Icon name="check" className="mt-0.5 h-4 w-4 shrink-0 text-saffron" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                   {f.phone && (
                     <a
                       href={f.phoneHref}

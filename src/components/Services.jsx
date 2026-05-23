@@ -10,7 +10,7 @@ export default function Services() {
         <SectionHeading
           eyebrow="What We Do"
           title="End-to-End Transport Services"
-          subtitle="From a single full-truckload to ongoing industrial supply runs, we move your cargo across India with care."
+          subtitle="From a single part-load to fully managed 3PL supply chains, we move your cargo across India with care."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

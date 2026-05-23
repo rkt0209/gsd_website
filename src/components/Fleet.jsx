@@ -17,12 +17,12 @@ export default function Fleet() {
           {fleet.map((vehicle, i) => (
             <Reveal key={vehicle.name} delay={i * 0.1}>
               <article className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
-                <div className="relative h-60 overflow-hidden">
+                <div className="relative flex h-60 items-center justify-center overflow-hidden bg-white p-3">
                   <img
                     src={vehicle.image}
                     alt={`${vehicle.name} cargo vehicle`}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   <span className="absolute left-4 top-4 rounded-full bg-saffron px-4 py-1 text-sm font-semibold text-navy shadow">
                     {vehicle.capacity}

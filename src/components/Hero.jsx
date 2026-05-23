@@ -14,14 +14,24 @@ const item = {
 export default function Hero() {
   return (
     <section id="home" className="relative isolate flex min-h-screen items-center overflow-hidden">
-      {/* Background image (LCP) + gradient overlay */}
+      {/* Navy gradient base */}
+      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-navy via-navy to-navy-light" />
+
+      {/* Our own truck as a faint background watermark */}
       <img
-        src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1920&q=60"
+        src="/truck-angle.jpg"
         alt=""
-        fetchPriority="high"
-        className="absolute inset-0 -z-20 h-full w-full object-cover"
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 right-0 -z-10 w-[60rem] max-w-[85%] opacity-[0.13]"
+        style={{
+          maskImage:
+            'linear-gradient(to left, black 25%, transparent 92%), linear-gradient(to top, transparent 2%, black 35%)',
+          maskComposite: 'intersect',
+          WebkitMaskImage:
+            'linear-gradient(to left, black 25%, transparent 92%), linear-gradient(to top, transparent 2%, black 35%)',
+          WebkitMaskComposite: 'source-in',
+        }}
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-navy via-navy/95 to-navy-light/90" />
 
       {/* Faint grid pattern for depth */}
       <div
@@ -55,7 +65,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 rounded-full border border-saffron/40 bg-saffron/10 px-4 py-1.5 text-sm font-medium text-saffron"
           >
             <span className="h-2 w-2 animate-pulse rounded-full bg-saffron" />
-            Pan-India 3PL & Container Transport
+            Pan-India 3PL Solutions
           </motion.span>
 
           <motion.h1
@@ -66,9 +76,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p variants={item} className="mt-6 max-w-2xl text-lg text-slate-200">
-            Safe, on-time and fully insured cargo movement across every corner of India with our
-            modern fleet of <strong className="text-white">32 ft</strong> and{' '}
-            <strong className="text-white">34 ft</strong> single-axle containers.
+            A full-service <strong className="text-white">3PL partner</strong> managing your
+            end-to-end logistics across India — from full &amp; part loads to nationwide
+            distribution, backed by our own fleet of 32 ft &amp; 34 ft containers.
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
@@ -88,7 +98,7 @@ export default function Hero() {
 
           {/* Trust badges */}
           <motion.ul variants={item} className="mt-10 flex flex-wrap gap-x-7 gap-y-3">
-            {['Fully Insured Transit', 'GPS-Tracked Fleet', '24/7 Support'].map((badge) => (
+            {['Pan-India Network', 'GPS-Tracked Fleet', '24/7 Support'].map((badge) => (
               <li key={badge} className="flex items-center gap-2 text-sm font-medium text-slate-200">
                 <Icon name="check" className="h-5 w-5 text-saffron" />
                 {badge}

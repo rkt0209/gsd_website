@@ -7,7 +7,7 @@ export const company = {
   name: 'GSD TransXpress',
   legalName: 'GSD TransXpress Pvt. Ltd.',
   shortName: 'GSD',
-  tagline: 'Connecting Business — Moving India Forward',
+  tagline: 'Logistics, Built Different.',
   phone: '+91 92052 32900',
   phoneHref: 'tel:+919205232900',
   whatsapp: '919205232900',
@@ -22,17 +22,26 @@ export const company = {
 export const founders = [
   {
     name: 'Amit Kumar',
-    role: 'Director',
+    role: 'Director — Planning',
     phone: '+91 92203 14370',
     phoneHref: 'tel:+919220314370',
-    bio: 'Drives operations and the nationwide fleet network, ensuring every consignment moves safely and on schedule.',
+    points: [
+      '20+ years of expertise in supply-chain planning, optimization, warehousing & transportation planning',
+      'Executive Programme in Supply Chain & Logistics, IIM Ahmedabad',
+      'MBA in Logistics & Supply Chain Management',
+    ],
   },
   {
     name: 'Vipin Pal',
-    role: 'Director',
+    role: 'Director — Operations Management',
     phone: '+91 96075 07777',
     phoneHref: 'tel:+919607507777',
-    bio: 'Leads client partnerships and growth, building long-term relationships across India’s industrial corridors.',
+    points: [
+      '20+ years of experience in operations management',
+      'Leads GSD’s nationwide fleet operations',
+      'Hands-on route planning & fleet optimization',
+      'Focused on safe, on-time delivery across India',
+    ],
   },
 ]
 
@@ -47,27 +56,27 @@ export const navLinks = [
 ]
 
 export const stats = [
-  { value: 60, suffix: '+', label: 'Container vehicles' },
+  { value: 100, suffix: '+', label: 'Vehicles in fleet' },
+  { value: 100, suffix: '+', label: 'Cities served' },
   { value: 28, suffix: '', label: 'States covered' },
-  { value: 18, suffix: '+', label: 'Cities served' },
   { value: 24, suffix: '/7', label: 'Support available' },
 ]
 
 export const services = [
   {
-    title: '3PL & Logistics Solutions',
+    title: '3PL & End-to-End Logistics',
     description:
-      'End-to-end third-party logistics (3PL) — transport, warehousing and distribution managed for you, so you can focus on your business.',
+      'Complete third-party logistics managed for you — road transport, plus rail, air & EXIM movements when you need them — so you can focus on your business.',
     icon: 'box',
   },
   {
-    title: 'Full Truckload (FTL)',
+    title: 'Full & Part Truckload (FTL / PTL)',
     description:
-      'Dedicated 32ft and 34ft containers for your cargo — no sharing, no stops, direct point-to-point delivery across India.',
+      'Dedicated full loads or shared part loads in 32ft and 34ft containers — direct, point-to-point delivery across India.',
     icon: 'truck',
   },
   {
-    title: 'Pan-India Delivery',
+    title: 'Pan-India Distribution',
     description:
       'A nationwide network reaching metros, tier-2 cities and remote industrial belts in all 28 states and 8 union territories.',
     icon: 'map',
@@ -75,26 +84,14 @@ export const services = [
   {
     title: 'Industrial & Project Cargo',
     description:
-      'Reliable movement of factory goods, raw materials, machinery and bulk consignments with flexible single-axle capacity.',
-    icon: 'box',
+      'Reliable movement of factory goods, raw materials, machinery and bulk consignments at scale.',
+    icon: 'warehouse',
   },
   {
     title: 'Real-Time Tracking',
     description:
       'GPS-enabled fleet with live status updates and a dedicated coordinator for every shipment, from pickup to drop.',
     icon: 'pin',
-  },
-  {
-    title: 'Warehousing Support',
-    description:
-      'Short and long-term storage and cross-docking at key transport hubs to keep your supply chain flowing smoothly.',
-    icon: 'warehouse',
-  },
-  {
-    title: 'Insured Transit',
-    description:
-      'Every consignment is moved by trained drivers under full transit insurance for complete peace of mind.',
-    icon: 'shield',
   },
 ]
 
@@ -103,8 +100,7 @@ export const fleet = [
     name: '32 ft Single-Axle Container',
     capacity: 'Up to 7 Tonnes',
     volume: '~1,400 cu. ft.',
-    image:
-      'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=70',
+    image: '/truck-angle.jpg',
     points: [
       'Ideal for medium-volume, light-to-medium weight cargo',
       'Closed body protection against rain & dust',
@@ -115,8 +111,7 @@ export const fleet = [
     name: '34 ft Single-Axle Container',
     capacity: 'Up to 9 Tonnes',
     volume: '~1,550 cu. ft.',
-    image:
-      'https://images.unsplash.com/photo-1586191582151-f73872dfd183?auto=format&fit=crop&w=900&q=70',
+    image: '/truck-side.jpg',
     points: [
       'Extra length for high-volume consignments',
       'Smooth single-axle ride for fragile goods',
@@ -155,7 +150,10 @@ export const regions = [
 ]
 
 // Enquiry-form dropdown choices — edit these lists to change the options.
-export const weightOptions = ['5 Ton', '6 Ton', '7 Ton', '8 Ton', '9 Ton', '10 Ton']
+export const weightOptions = [
+  '1 Ton', '2 Ton', '3 Ton', '4 Ton', '5 Ton',
+  '6 Ton', '7 Ton', '8 Ton', '9 Ton', '10 Ton',
+]
 
 export const vehicleSizeOptions = [
   '14 feet', '17 feet', '20 feet', '22 feet', '24 feet', '32 feet', '34 feet',
