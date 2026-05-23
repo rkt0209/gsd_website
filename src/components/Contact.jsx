@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { company } from '../data/site'
+import { company, weightOptions, vehicleSizeOptions } from '../data/site'
 import Icon from './Icon'
 import Reveal from './Reveal'
 
@@ -25,6 +25,8 @@ export default function Contact() {
       `*Email:* ${data.email || '-'}%0A` +
       `*Pickup:* ${data.from || '-'}%0A` +
       `*Drop:* ${data.to || '-'}%0A` +
+      `*Weight:* ${data.weight || '-'}%0A` +
+      `*Vehicle size:* ${data.vehicleSize || '-'}%0A` +
       `*Cargo details:* ${data.message || '-'}`
     window.open(`https://wa.me/${company.whatsapp}?text=${message}`, '_blank', 'noopener')
     setSent(true)
@@ -121,6 +123,15 @@ export default function Contact() {
                     <Field id="from" label="Pickup city" placeholder="From" />
                     <Field id="to" label="Drop city" placeholder="To" />
                   </div>
+                  <div className="grid gap-5 sm:grid-cols-2">
+                    <Select id="weight" name="weight" label="Weight" options={weightOptions} />
+                    <Select
+                      id="vehicleSize"
+                      name="vehicleSize"
+                      label="Vehicle size"
+                      options={vehicleSizeOptions}
+                    />
+                  </div>
                   <div>
                     <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-navy">
                       Cargo details
@@ -129,7 +140,7 @@ export default function Contact() {
                       id="message"
                       name="message"
                       rows={3}
-                      placeholder="Type of goods, weight, preferred date…"
+                      placeholder="Type of goods, preferred date…"
                       className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-800 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
                     />
                   </div>
@@ -166,6 +177,36 @@ function Field({ id, label, type = 'text', placeholder }) {
         placeholder={placeholder}
         className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-800 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
       />
+    </div>
+  )
+}
+
+function Select({ id, name, label, options }) {
+  return (
+    <div>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-navy">
+        {label}
+      </label>
+      <select
+        id={id}
+        name={name}
+        defaultValue=""
+        required
+        className="w-full appearance-none rounded-xl border border-slate-200 bg-white bg-[length:1.25rem] bg-[right_0.75rem_center] bg-no-repeat px-4 py-3 text-slate-800 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",
+        }}
+      >
+        <option value="" disabled>
+          Select {label.toLowerCase()}
+        </option>
+        {options.map((opt) => (
+          <option key={opt} value={opt}>
+            {opt}
+          </option>
+        ))}
+      </select>
     </div>
   )
 }

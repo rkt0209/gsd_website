@@ -154,6 +154,13 @@ export const regions = [
   'Nagpur', 'Coimbatore', 'Visakhapatnam', 'Guwahati', 'Chandigarh', 'Kochi',
 ]
 
+// Enquiry-form dropdown choices — edit these lists to change the options.
+export const weightOptions = ['5 Ton', '6 Ton', '7 Ton', '8 Ton', '9 Ton', '10 Ton']
+
+export const vehicleSizeOptions = [
+  '14 feet', '17 feet', '20 feet', '22 feet', '24 feet', '32 feet', '34 feet',
+]
+
 export const testimonials = [
   {
     quote:
