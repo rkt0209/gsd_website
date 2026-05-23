@@ -1,0 +1,54 @@
+import { fleet } from '../data/site'
+import Icon from './Icon'
+import Reveal from './Reveal'
+import SectionHeading from './SectionHeading'
+
+export default function Fleet() {
+  return (
+    <section id="fleet" className="py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Our Fleet"
+          title="32 ft & 34 ft Single-Axle Containers"
+          subtitle="A well-maintained, GPS-enabled fleet built for the long haul on Indian highways."
+        />
+
+        <div className="mt-14 grid gap-8 md:grid-cols-2">
+          {fleet.map((vehicle, i) => (
+            <Reveal key={vehicle.name} delay={i * 0.1}>
+              <article className="group overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-shadow hover:shadow-xl">
+                <div className="relative h-60 overflow-hidden">
+                  <img
+                    src={vehicle.image}
+                    alt={`${vehicle.name} cargo vehicle`}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <span className="absolute left-4 top-4 rounded-full bg-saffron px-4 py-1 text-sm font-semibold text-navy shadow">
+                    {vehicle.capacity}
+                  </span>
+                </div>
+                <div className="p-7">
+                  <div className="flex items-baseline justify-between gap-3">
+                    <h3 className="text-xl font-bold text-navy">{vehicle.name}</h3>
+                    <span className="whitespace-nowrap text-sm font-medium text-steel">
+                      {vehicle.volume}
+                    </span>
+                  </div>
+                  <ul className="mt-4 space-y-2.5">
+                    {vehicle.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2.5 text-slate-600">
+                        <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-saffron" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
