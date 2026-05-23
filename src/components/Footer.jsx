@@ -54,6 +54,15 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Statutory registration details */}
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-center gap-x-8 gap-y-1.5 px-4 py-5 text-xs text-slate-400 sm:px-6 lg:px-8">
+          <span><span className="font-semibold text-slate-300">CIN:</span> {company.cin}</span>
+          <span><span className="font-semibold text-slate-300">PAN:</span> {company.pan}</span>
+          <span><span className="font-semibold text-slate-300">GSTIN:</span> {company.gst}</span>
+        </div>
+      </div>
+
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-6 text-sm sm:flex-row sm:px-6 lg:px-8">
           <p>&copy; {new Date().getFullYear()} {company.legalName}. All rights reserved.</p>

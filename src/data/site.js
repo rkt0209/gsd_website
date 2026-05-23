@@ -16,6 +16,9 @@ export const company = {
     'Gali No. 3, NH-48, Near Apollo Tyres Agency, Opp. BPCL Petrol Pump, Bilaspur Chowk, Gurugram, Haryana 122413',
   hours: 'Open 24 / 7 · 365 days a year',
   founded: 2026,
+  cin: 'U49230HR2026PTC142539',
+  pan: 'AAMCG8412F',
+  gst: '06AAMCG8412F1ZM',
 }
 
 // Company leadership (Directors).
