@@ -26,8 +26,8 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  color: #1e293b;
-  background-color: #ffffff;
+  color: #e2e8f0;
+  background-color: #0f2742;
 }
 
 /* Accessible focus ring for keyboard users */

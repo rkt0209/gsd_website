@@ -33,14 +33,14 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="relative isolate overflow-hidden bg-slate-50 py-20 sm:py-28">
+    <section id="contact" className="relative isolate overflow-hidden bg-navy-light py-20 sm:py-28">
       {/* Faint brand watermark in the background */}
       <img
         src="/logo.png"
         alt=""
         aria-hidden="true"
         loading="lazy"
-        className="pointer-events-none absolute -right-16 bottom-0 -z-10 w-[34rem] max-w-none opacity-[0.05]"
+        className="pointer-events-none absolute -right-16 bottom-0 -z-10 w-[34rem] max-w-none opacity-[0.08]"
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-2">
@@ -49,10 +49,10 @@ export default function Contact() {
             <p className="text-sm font-semibold uppercase tracking-widest text-saffron">
               Get In Touch
             </p>
-            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">
+            <h2 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               Request a Free Quote
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="mt-4 text-lg text-slate-300">
               Tell us about your shipment and our team will get back to you with the best route and
               rate — usually within a couple of hours.
             </p>
@@ -60,14 +60,14 @@ export default function Contact() {
             <dl className="mt-10 space-y-5">
               {details.map((d) => (
                 <div key={d.label} className="flex items-start gap-4">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-navy text-saffron">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-saffron text-navy">
                     <Icon name={d.icon} className="h-5 w-5" />
                   </div>
                   <div>
-                    <dt className="text-sm font-medium text-steel">{d.label}</dt>
-                    <dd className="text-base font-semibold text-navy">
+                    <dt className="text-sm font-medium text-slate-400">{d.label}</dt>
+                    <dd className="text-base font-semibold text-white">
                       {d.href ? (
-                        <a href={d.href} className="transition-colors hover:text-saffron-dark">
+                        <a href={d.href} className="transition-colors hover:text-saffron">
                           {d.value}
                         </a>
                       ) : (
@@ -91,21 +91,21 @@ export default function Contact() {
 
           {/* Right: form */}
           <Reveal delay={0.1}>
-            <div className="rounded-2xl border border-slate-100 bg-white p-7 shadow-lg sm:p-9">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-7 shadow-lg backdrop-blur sm:p-9">
               {sent ? (
                 <div className="flex h-full min-h-[20rem] flex-col items-center justify-center text-center">
-                  <div className="grid h-16 w-16 place-items-center rounded-full bg-green-100 text-green-600">
+                  <div className="grid h-16 w-16 place-items-center rounded-full bg-green-500/20 text-green-400">
                     <Icon name="check" className="h-8 w-8" />
                   </div>
-                  <h3 className="mt-5 text-2xl font-bold text-navy">Almost there!</h3>
-                  <p className="mt-2 text-slate-600">
+                  <h3 className="mt-5 text-2xl font-bold text-white">Almost there!</h3>
+                  <p className="mt-2 text-slate-300">
                     WhatsApp should have opened with your enquiry pre-filled — just hit send and our
                     team will reply shortly. If it didn’t open,{' '}
                     <a
                       href={`https://wa.me/${company.whatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-semibold text-saffron-dark underline"
+                      className="font-semibold text-saffron underline"
                     >
                       message us here
                     </a>
@@ -133,7 +133,7 @@ export default function Contact() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-navy">
+                    <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-slate-200">
                       Cargo details
                     </label>
                     <textarea
@@ -141,7 +141,7 @@ export default function Contact() {
                       name="message"
                       rows={3}
                       placeholder="Type of goods, preferred date…"
-                      className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-800 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
+                      className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
                     />
                   </div>
                   <button
@@ -150,7 +150,7 @@ export default function Contact() {
                   >
                     <Icon name="whatsapp" className="h-5 w-5" stroke={false} /> Send Enquiry
                   </button>
-                  <p className="text-center text-xs text-steel">
+                  <p className="text-center text-xs text-slate-400">
                     Sends your details to us instantly via WhatsApp.
                   </p>
                 </form>
@@ -166,7 +166,7 @@ export default function Contact() {
 function Field({ id, label, type = 'text', placeholder }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-navy">
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-slate-200">
         {label}
       </label>
       <input
@@ -175,7 +175,7 @@ function Field({ id, label, type = 'text', placeholder }) {
         type={type}
         required
         placeholder={placeholder}
-        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-slate-800 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
+        className="w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-white placeholder:text-slate-400 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
       />
     </div>
   )
@@ -184,7 +184,7 @@ function Field({ id, label, type = 'text', placeholder }) {
 function Select({ id, name, label, options }) {
   return (
     <div>
-      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-navy">
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-slate-200">
         {label}
       </label>
       <select
@@ -192,17 +192,17 @@ function Select({ id, name, label, options }) {
         name={name}
         defaultValue=""
         required
-        className="w-full appearance-none rounded-xl border border-slate-200 bg-white bg-[length:1.25rem] bg-[right_0.75rem_center] bg-no-repeat px-4 py-3 text-slate-800 outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
+        className="w-full appearance-none rounded-xl border border-white/20 bg-white/5 bg-[length:1.25rem] bg-[right_0.75rem_center] bg-no-repeat px-4 py-3 text-white outline-none transition focus:border-saffron focus:ring-2 focus:ring-saffron/30"
         style={{
           backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")",
         }}
       >
-        <option value="" disabled>
+        <option value="" disabled style={{ color: '#64748b' }}>
           Select {label.toLowerCase()}
         </option>
         {options.map((opt) => (
-          <option key={opt} value={opt}>
+          <option key={opt} value={opt} style={{ color: '#0f2742' }}>
             {opt}
           </option>
         ))}

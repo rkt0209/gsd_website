@@ -1,6 +1,6 @@
 import Reveal from './Reveal'
 
-export default function SectionHeading({ eyebrow, title, subtitle, light = false }) {
+export default function SectionHeading({ eyebrow, title, subtitle, light = true }) {
   return (
     <Reveal className="mx-auto max-w-2xl text-center">
       {eyebrow && (

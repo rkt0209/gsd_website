@@ -5,7 +5,7 @@ import SectionHeading from './SectionHeading'
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="relative overflow-hidden bg-navy py-20 text-white sm:py-28">
+    <section id="why-us" className="relative overflow-hidden bg-navy-light py-20 text-white sm:py-28">
       <div
         aria-hidden="true"
         className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-saffron/10 blur-3xl"

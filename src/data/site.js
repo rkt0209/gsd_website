@@ -66,7 +66,7 @@ export const services = [
   {
     title: '3PL & End-to-End Logistics',
     description:
-      'Complete third-party logistics managed for you — road transport, plus rail, air & EXIM movements when you need them — so you can focus on your business.',
+      'Complete third-party logistics managed for you — Road transport, plus Rail, Air & EXIM movements when you need them — so you can focus on your business.',
     icon: 'box',
   },
   {

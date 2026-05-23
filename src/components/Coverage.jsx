@@ -8,7 +8,7 @@ export default function Coverage() {
   const ticker = [...regions, ...regions]
 
   return (
-    <section id="coverage" className="bg-slate-50 py-20 sm:py-28">
+    <section id="coverage" className="bg-navy py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Where We Go"
@@ -20,7 +20,7 @@ export default function Coverage() {
           {regions.map((region) => (
             <div
               key={region}
-              className="flex items-center gap-2 rounded-xl border border-slate-100 bg-white px-4 py-3 text-sm font-medium text-navy shadow-sm transition-colors hover:border-saffron/50"
+              className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-slate-200 backdrop-blur transition-colors hover:border-saffron/50 hover:bg-white/10"
             >
               <Icon name="pin" className="h-4 w-4 shrink-0 text-saffron" />
               {region}
@@ -30,12 +30,12 @@ export default function Coverage() {
       </div>
 
       {/* Looping city marquee */}
-      <div className="mt-16 overflow-hidden border-y border-slate-200 bg-white py-5">
+      <div className="mt-16 overflow-hidden border-y border-white/10 bg-white/5 py-5">
         <div className="flex w-max animate-marquee gap-10 whitespace-nowrap px-5">
           {ticker.map((region, i) => (
             <span
               key={`${region}-${i}`}
-              className="flex items-center gap-2 text-lg font-semibold text-steel"
+              className="flex items-center gap-2 text-lg font-semibold text-slate-400"
             >
               <span className="h-1.5 w-1.5 rounded-full bg-saffron" />
               {region}
