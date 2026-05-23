@@ -78,7 +78,7 @@ export default function Hero() {
           <motion.p variants={item} className="mt-6 max-w-2xl text-lg text-slate-200">
             A full-service <strong className="text-white">3PL partner</strong> managing your
             end-to-end logistics across India — from full &amp; part loads to nationwide
-            distribution, backed by our own fleet of 32 ft &amp; 34 ft containers.
+            distribution, backed by our own fleet of 32/34 ft containers.
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">

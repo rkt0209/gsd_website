@@ -5,7 +5,7 @@ import Reveal from './Reveal'
 const highlights = [
   'End-to-end 3PL management',
   'Full & part-load road transport',
-  'Own fleet of 32 ft & 34 ft containers',
+  'Own fleet of 32/34 ft containers',
   'GPS-tracked, 24/7-supported shipments',
 ]
 
@@ -43,7 +43,7 @@ export default function About() {
               {company.name} is a full-service pan-India third-party logistics (3PL) company.
               Founded in {company.founded}, we manage end-to-end logistics for manufacturers, traders
               and businesses — from full &amp; part loads to nationwide distribution — backed by our
-              own fleet of 32 ft and 34 ft containers.
+              own fleet of 32/34 ft containers.
             </p>
             <ul className="mt-7 grid gap-3 sm:grid-cols-2">
               {highlights.map((h) => (

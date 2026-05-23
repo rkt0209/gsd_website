@@ -17,7 +17,7 @@ export default function Footer() {
             />
           </div>
           <p className="mt-4 max-w-md text-sm">
-            A pan-India 3PL and road transport company operating 32 ft and 34 ft single-axle
+            A pan-India 3PL and road transport company operating 32/34 ft single-axle
             containers. Safe, reliable and on-time cargo movement since {company.founded}.
           </p>
         </div>
