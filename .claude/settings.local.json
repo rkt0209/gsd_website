@@ -4,7 +4,11 @@
       "PowerShell(npm *)",
       "PowerShell(Copy-Item *)",
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Rohit kumar\\\\Desktop\\\\GSD_WEBSITE\" -File | Where-Object { $_.Extension -match 'png|jpg|jpeg' } | Select-Object Name, Length, LastWriteTime | Sort-Object LastWriteTime -Descending)",
-      "PowerShell(Move-Item *)"
+      "PowerShell(Move-Item *)",
+      "Bash(findstr /i \"jpg jpeg png webp\")",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $img = [System.Drawing.Image]::FromFile\\(\"C:\\\\Users\\\\Rohit kumar\\\\Desktop\\\\GSD_WEBSITE\\\\backgroundimage.jpeg\"\\); \"$\\($img.Width\\) x $\\($img.Height\\)\"; $img.Dispose\\(\\); \\(Get-Item \"C:\\\\Users\\\\Rohit kumar\\\\Desktop\\\\GSD_WEBSITE\\\\backgroundimage.jpeg\"\\).Length)",
+      "Bash(npm run *)",
+      "Bash(node verify-hero.mjs)"
     ]
   }
 }

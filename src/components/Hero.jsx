@@ -14,34 +14,43 @@ const item = {
 export default function Hero() {
   return (
     <section id="home" className="relative isolate flex min-h-screen items-center overflow-hidden">
-      {/* Navy gradient base */}
-      <div className="absolute inset-0 -z-20 bg-gradient-to-br from-navy via-navy to-navy-light" />
+      {/* Navy base (always behind everything) */}
+      <div className="absolute inset-0 -z-30 bg-navy" />
 
-      {/* Our own truck as a faint background watermark */}
-      <img
-        src="/truck-angle.jpg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 right-0 -z-10 w-[60rem] max-w-[85%] opacity-[0.13]"
-        style={{
-          maskImage:
-            'linear-gradient(to left, black 25%, transparent 92%), linear-gradient(to top, transparent 2%, black 35%)',
-          maskComposite: 'intersect',
-          WebkitMaskImage:
-            'linear-gradient(to left, black 25%, transparent 92%), linear-gradient(to top, transparent 2%, black 35%)',
-          WebkitMaskComposite: 'source-in',
-        }}
-      />
+      {/* Branded composite hero background — air, rail, road & sea.
+          The <picture> picks the closest aspect-ratio source from 7 buckets
+          (9:21 → 9:16 → 3:4 → 1:1 → 4:3 → 3:2 → 16:9), then object-cover
+          resizes that source to fill the hero edge-to-edge with no bars and
+          no blur. Because the picked source's ratio is within ~5% of the
+          viewport's at most realistic resolutions, the leftover cover-crop
+          lands in the negative space around the vehicles (sky around the
+          plane, water around the ship), not on the vehicles themselves. */}
+      <picture>
+        <source media="(max-aspect-ratio: 1/2)" srcSet="/hero-9x21.jpg" />
+        <source media="(max-aspect-ratio: 2/3)" srcSet="/hero-9x16.jpg" />
+        <source media="(max-aspect-ratio: 7/8)" srcSet="/hero-3x4.jpg" />
+        <source media="(max-aspect-ratio: 7/6)" srcSet="/hero-1x1.jpg" />
+        <source media="(max-aspect-ratio: 17/12)" srcSet="/hero-4x3.jpg" />
+        <source media="(max-aspect-ratio: 5/3)" srcSet="/hero-3x2.jpg" />
+        <img
+          src="/hero-16x9.jpg"
+          alt=""
+          aria-hidden="true"
+          fetchpriority="high"
+          className="pointer-events-none absolute inset-0 -z-20 h-full w-full object-cover object-center opacity-85"
+        />
+      </picture>
 
-      {/* Faint grid pattern for depth */}
+      {/* Readability overlay — stronger on the left where the text lives,
+          lighter on the right so the truck/ship illustration stays visible.
+          A second top-to-bottom wash deepens the navy floor. */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 opacity-[0.07]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-          backgroundSize: '44px 44px',
-        }}
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-navy/95 via-navy/80 to-navy/45 sm:to-navy/35"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-navy/40 via-transparent to-navy/70"
       />
 
       {/* Soft animated accents */}
